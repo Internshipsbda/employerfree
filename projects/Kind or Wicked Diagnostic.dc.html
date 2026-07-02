@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/styles.css">
+  <script src="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:#EDEBE6;font-family:var(--font-body),system-ui,sans-serif}
+    .dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+    .dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 22px}
+    .dv-tid{font:700 10px var(--font-display),monospace;padding:3px 8px;background:var(--ink);color:#fff;border-radius:4px;text-decoration:none;letter-spacing:.04em}
+    .dv-tname{font:700 13px/1.3 var(--font-display),system-ui,sans-serif;color:var(--ink)}
+    .dv-opts{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
+    .dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px}
+    .dv-oid{font:700 10.5px var(--font-display),monospace;padding:3px 8px;background:rgba(0,0,0,.08);color:var(--ink);border-radius:5px;text-decoration:none;letter-spacing:.04em}
+    .dv-olabel{display:flex;align-items:baseline;gap:8px;font:500 11.5px/1.4 var(--font-body),system-ui,sans-serif;color:rgba(14,26,35,.6)}
+    .dv-card{background:var(--paper);border:1px solid var(--border);border-radius:18px;box-shadow:0 6px 24px rgba(14,26,35,.09);overflow:hidden}
+    .dv-opt:target .dv-oid{background:var(--blue);color:#fff}
+    .dv-next{margin:26px 0 0;font:13px/1.6 var(--font-body),system-ui,sans-serif;color:rgba(14,26,35,.55)}
+    .kw-h1{font-family:var(--font-display);font-size:34px;font-weight:900;letter-spacing:-.02em;line-height:1.08;margin:0 0 12px;color:var(--ink)}
+    .kw-intro{color:var(--text-secondary);margin:0 0 22px;line-height:1.6;font-size:14.5px}
+    .kw-qcard{background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-sm);padding:20px}
+    .kw-qhead{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+    .kw-qnum{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--orange);color:var(--ink);font-family:var(--font-display);font-weight:800;font-size:14px;display:grid;place-items:center}
+    .kw-qprompt{font-family:var(--font-display);font-weight:700;font-size:16px;line-height:1.3;margin:0;color:var(--ink);padding-top:3px}
+    .kw-eyebrow{font-family:var(--font-display);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;margin:0 0 10px}
+    .kw-reslabel{font-family:var(--font-display);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--text-muted);margin:0 0 6px}
+    .kw-hint{font-size:12px;color:var(--text-muted);text-align:center;margin:10px 0 0}
+    .kw-sech{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:26px 0 12px}
+  </style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Kind vs. Wicked Environment Diagnostic — three flow &amp; result treatments</span></div>
+  <div class="dv-opts">
+
+    <!-- ============ 1a — Option cards + spectrum bar ============ -->
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Pole comparison + Kind/Both/Wicked toggle, Kind↔Wicked spectrum result</div>
+      <div class="dv-card" style="width:660px">
+        <div style="display:flex;align-items:center;gap:12px;padding:16px 22px;border-bottom:1px solid var(--border);background:var(--white)">
+          <img src="assets/logo-mark.png" alt="" style="height:34px;width:34px">
+          <span style="font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:-.01em;color:var(--ink)">Internship Insights Co.</span>
+        </div>
+
+        <sc-if value="{{ vA.submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:28px">
+            <p class="kw-eyebrow" style="color:var(--blue-700)">Your environment read</p>
+            <h2 style="font-family:var(--font-display);font-size:26px;font-weight:900;letter-spacing:-.02em;margin:0 0 20px;color:var(--ink)">Here's your read, {{ vA.firstName }}.</h2>
+            <div style="{{ vA.heroStyle }}">
+              <p class="kw-reslabel">Result</p>
+              <p style="font-family:var(--font-display);font-size:30px;font-weight:900;letter-spacing:-.02em;margin:0 0 6px"><span style="{{ vA.verdictStyle }}">{{ vA.verdict }}</span></p>
+              <p style="font-size:14px;line-height:1.55;color:var(--text-secondary);margin:0 0 20px">{{ vA.tagline }}</p>
+              <div style="position:relative;height:26px;margin-bottom:8px">
+                <div style="position:absolute;top:7px;left:0;right:0;height:12px;border-radius:999px;background:linear-gradient(90deg,var(--blue) 0%,var(--orange) 55%,var(--burnt) 100%)"></div>
+                <div style="{{ vA.markerStyle }}"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.14em">
+                <span style="color:var(--blue-800)">KIND</span>
+                <span style="color:var(--burnt)">WICKED</span>
+              </div>
+              <p style="font-size:13px;color:var(--text-muted);margin:10px 0 0">{{ vA.pctLabel }} / 100 on the wicked scale</p>
+            </div>
+
+            <div style="border:1px solid var(--border);border-radius:16px;background:var(--white);box-shadow:var(--shadow-sm);padding:20px;margin-top:16px">
+              <p class="kw-reslabel">What this means for your interns</p>
+              <p style="font-size:14px;line-height:1.6;color:var(--text-secondary);margin:0">{{ vA.implication }}</p>
+            </div>
+
+            <div style="border-radius:16px;border:1px solid var(--orange);border-left:4px solid var(--orange);background:var(--orange-50);padding:22px;margin-top:16px">
+              <p class="kw-eyebrow" style="color:var(--orange-700)">Next step</p>
+              <p style="font-family:var(--font-display);font-size:19px;font-weight:800;color:var(--ink);margin:0 0 8px;line-height:1.25">Let's build an internship program that fits your environment.</p>
+              <p style="font-size:13.5px;line-height:1.55;color:var(--text-secondary);margin:0 0 16px">We'll audit your current internship program and design the scaffolding your interns actually need.</p>
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="primary" size="lg" full-width="{{ true }}" hint-size="100%,52px">Reach out to get your program audited →</x-import>
+              <div style="display:flex;gap:10px;margin-top:12px">
+                <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="outline" onClick="{{ vA.onPrint }}" hint-size="50%,44px">Print / save summary</x-import>
+                <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="ghost" onClick="{{ vA.onReset }}" hint-size="50%,44px">Start over</x-import>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ vA.editing }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:28px">
+            <p class="kw-eyebrow" style="color: var(--border-strong)">8-question diagnostic for employers</p>
+            <h1 class="kw-h1">Is your workplace <span style="color:var(--blue)">Kind</span> or <span style="color: var(--orange)">Wicked</span>?</h1>
+            <p class="kw-intro">Skills develop fast in <strong>kind</strong> environments — clear rules, quick feedback, repeating patterns. They stall in <strong>wicked</strong> ones, where rules are incomplete and feedback is delayed. Knowing which you run is the first step to designing a high-impact internship.</p>
+
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-sm);padding:20px;margin-bottom:22px;display:flex;flex-direction:column;gap:16px">
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.TextField" label="Your name" id="a-name" placeholder="Jane Smith" value="{{ vA.name }}" onChange="{{ vA.onName }}" hint-size="100%,70px"></x-import>
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.TextField" label="Company" id="a-co" placeholder="Acme Inc." value="{{ vA.company }}" onChange="{{ vA.onCompany }}" hint-size="100%,70px"></x-import>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <sc-for list="{{ vA.questions }}" as="q" hint-placeholder-count="3">
+                <div class="kw-qcard">
+                  <div class="kw-qhead">
+                    <span class="kw-qnum">{{ q.n }}</span>
+                    <p class="kw-qprompt">{{ q.prompt }}</p>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+                    <div style="border:1px solid var(--blue-100);background:var(--blue-50);border-radius:10px;padding:11px 13px">
+                      <span style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--blue-800)">KIND</span>
+                      <p style="font-size:12.5px;line-height:1.45;color:var(--text-secondary);margin:5px 0 0">{{ q.kind }}</p>
+                    </div>
+                    <div style="border:1px solid var(--burnt-300);background:var(--burnt-100);border-radius:10px;padding:11px 13px">
+                      <span style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--burnt)">WICKED</span>
+                      <p style="font-size:12.5px;line-height:1.45;color:var(--text-secondary);margin:5px 0 0">{{ q.wicked }}</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <sc-for list="{{ q.opts }}" as="opt" hint-placeholder-count="3">
+                      <button type="button" onClick="{{ opt.onSelect }}" style="{{ opt.segStyle }}">{{ opt.short }}</button>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="margin-top:22px">
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="primary" size="lg" full-width="{{ true }}" disabled="{{ vA.cannotSubmit }}" onClick="{{ vA.onSubmit }}" hint-size="100%,54px">{{ vA.submitLabel }}</x-import>
+              <p class="kw-hint">Takes about 90 seconds · Instant read · No spam</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <!-- ============ 1b — Segmented toggle + tally ============ -->
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Fast — pole comparison + Kind/Both/Wicked toggle, tally result</div>
+      <div class="dv-card" style="width:660px">
+        <div style="display:flex;align-items:center;gap:12px;padding:16px 22px;border-bottom:1px solid var(--border);background:var(--white)">
+          <img src="assets/logo-mark.png" alt="" style="height:34px;width:34px">
+          <span style="font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:-.01em;color:var(--ink)">Internship Insights Co.</span>
+        </div>
+
+        <sc-if value="{{ vB.submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:28px">
+            <p class="kw-eyebrow" style="color:var(--blue-700)">Your environment read</p>
+            <h2 style="font-family:var(--font-display);font-size:26px;font-weight:900;letter-spacing:-.02em;margin:0 0 20px;color:var(--ink)">Here's your read, {{ vB.firstName }}.</h2>
+            <div style="{{ vB.heroStyle }}">
+              <p class="kw-reslabel">Result</p>
+              <p style="font-family:var(--font-display);font-size:30px;font-weight:900;letter-spacing:-.02em;margin:0 0 16px"><span style="{{ vB.verdictStyle }}">{{ vB.verdict }}</span></p>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-family:var(--font-display);font-size:12px;font-weight:700;margin-bottom:5px;color:var(--ink)"><span>Kind answers</span><span>{{ vB.kindC }} / 8</span></div>
+                  <div style="height:12px;background:var(--slate);border-radius:999px;overflow:hidden"><div style="{{ vB.kindBarStyle }}"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-family:var(--font-display);font-size:12px;font-weight:700;margin-bottom:5px;color:var(--ink)"><span>Wicked answers</span><span>{{ vB.wickedC }} / 8</span></div>
+                  <div style="height:12px;background:var(--slate);border-radius:999px;overflow:hidden"><div style="{{ vB.wickedBarStyle }}"></div></div>
+                </div>
+              </div>
+              <p style="font-size:13px;color:var(--text-muted);margin:14px 0 0">{{ vB.bothC }} answers landed in the middle.</p>
+            </div>
+
+            <div style="border:1px solid var(--border);border-radius:16px;background:var(--white);box-shadow:var(--shadow-sm);padding:20px;margin-top:16px">
+              <p class="kw-reslabel">What this means for your interns</p>
+              <p style="font-size:14px;line-height:1.6;color:var(--text-secondary);margin:0">{{ vB.implication }}</p>
+            </div>
+
+            <div style="border-radius:16px;border:1px solid var(--orange);border-left:4px solid var(--orange);background:var(--orange-50);padding:22px;margin-top:16px">
+              <p class="kw-eyebrow" style="color:var(--orange-700)">Next step</p>
+              <p style="font-family:var(--font-display);font-size:19px;font-weight:800;color:var(--ink);margin:0 0 8px;line-height:1.25">Let's build an internship program that fits your environment.</p>
+              <p style="font-size:13.5px;line-height:1.55;color:var(--text-secondary);margin:0 0 16px">We'll audit your current internship program and design the scaffolding your interns actually need.</p>
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="primary" size="lg" full-width="{{ true }}" hint-size="100%,52px">Reach out to get your program audited →</x-import>
+              <div style="display:flex;gap:10px;margin-top:12px">
+                <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="outline" onClick="{{ vB.onPrint }}" hint-size="50%,44px">Print / save summary</x-import>
+                <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="ghost" onClick="{{ vB.onReset }}" hint-size="50%,44px">Start over</x-import>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ vB.editing }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:28px">
+            <p class="kw-eyebrow" style="color:var(--orange-700)">8-question diagnostic for employers</p>
+            <h1 class="kw-h1">Kind or Wicked? <span style="color:var(--text-muted);font-weight:700;font-size:22px;display:block;letter-spacing:0">Weigh each pair, then pick a side.</span></h1>
+            <p class="kw-intro">For each pair below, decide which description fits your team's reality — or land in the middle if it's genuinely both.</p>
+
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-sm);padding:20px;margin-bottom:22px;display:flex;flex-direction:column;gap:16px">
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.TextField" label="Your name" id="b-name" placeholder="Jane Smith" value="{{ vB.name }}" onChange="{{ vB.onName }}" hint-size="100%,70px"></x-import>
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.TextField" label="Company" id="b-co" placeholder="Acme Inc." value="{{ vB.company }}" onChange="{{ vB.onCompany }}" hint-size="100%,70px"></x-import>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <sc-for list="{{ vB.questions }}" as="q" hint-placeholder-count="3">
+                <div class="kw-qcard">
+                  <div class="kw-qhead">
+                    <span class="kw-qnum">{{ q.n }}</span>
+                    <p class="kw-qprompt">{{ q.prompt }}</p>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+                    <div style="border:1px solid var(--blue-100);background:var(--blue-50);border-radius:10px;padding:11px 13px">
+                      <span style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--blue-800)">KIND</span>
+                      <p style="font-size:12.5px;line-height:1.45;color:var(--text-secondary);margin:5px 0 0">{{ q.kind }}</p>
+                    </div>
+                    <div style="border:1px solid var(--burnt-300);background:var(--burnt-100);border-radius:10px;padding:11px 13px">
+                      <span style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--burnt)">WICKED</span>
+                      <p style="font-size:12.5px;line-height:1.45;color:var(--text-secondary);margin:5px 0 0">{{ q.wicked }}</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <sc-for list="{{ q.opts }}" as="opt" hint-placeholder-count="3">
+                      <button type="button" onClick="{{ opt.onSelect }}" style="{{ opt.segStyle }}">{{ opt.short }}</button>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="margin-top:22px">
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="primary" size="lg" full-width="{{ true }}" disabled="{{ vB.cannotSubmit }}" onClick="{{ vB.onSubmit }}" hint-size="100%,54px">{{ vB.submitLabel }}</x-import>
+              <p class="kw-hint">Takes about 90 seconds · Instant read · No spam</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <!-- ============ 1c — Spectrum scale + dial ============ -->
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Nuanced — 5-point spectrum per question, dial result</div>
+      <div class="dv-card" style="width:660px">
+        <div style="display:flex;align-items:center;gap:12px;padding:16px 22px;border-bottom:1px solid var(--border);background:var(--white)">
+          <img src="assets/logo-mark.png" alt="" style="height:34px;width:34px">
+          <span style="font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:-.01em;color:var(--ink)">Internship Insights Co.</span>
+        </div>
+
+        <sc-if value="{{ vC.submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:28px">
+            <p class="kw-eyebrow" style="color:var(--blue-700)">Your environment read</p>
+            <h2 style="font-family:var(--font-display);font-size:26px;font-weight:900;letter-spacing:-.02em;margin:0 0 20px;color:var(--ink)">Here's your read, {{ vC.firstName }}.</h2>
+            <div style="{{ vC.heroStyle }}">
+              <div style="display:flex;align-items:center;gap:24px">
+                <div style="{{ vC.dialStyle }}">
+                  <div style="position:absolute;inset:14px;background:var(--white);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+                    <span style="font-family:var(--font-display);font-size:32px;font-weight:900;line-height:1;color:var(--ink)">{{ vC.pctLabel }}</span>
+                    <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:3px">wicked</span>
+                  </div>
+                </div>
+                <div style="flex:1">
+                  <p class="kw-reslabel">Result</p>
+                  <p style="font-family:var(--font-display);font-size:26px;font-weight:900;letter-spacing:-.02em;margin:0 0 6px;line-height:1.1"><span style="{{ vC.verdictStyle }}">{{ vC.verdict }}</span></p>
+                  <p style="font-size:13.5px;line-height:1.5;color:var(--text-secondary);margin:0">{{ vC.tagline }}</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="border:1px solid var(--border);border-radius:16px;background:var(--white);box-shadow:var(--shadow-sm);padding:20px;margin-top:16px">
+              <p class="kw-reslabel">What this means for your interns</p>
+              <p style="font-size:14px;line-height:1.6;color:var(--text-secondary);margin:0">{{ vC.implication }}</p>
+            </div>
+
+            <div style="border-radius:16px;border:1px solid var(--orange);border-left:4px solid var(--orange);background:var(--orange-50);padding:22px;margin-top:16px">
+              <p class="kw-eyebrow" style="color:var(--orange-700)">Next step</p>
+              <p style="font-family:var(--font-display);font-size:19px;font-weight:800;color:var(--ink);margin:0 0 8px;line-height:1.25">Let's build an internship program that fits your environment.</p>
+              <p style="font-size:13.5px;line-height:1.55;color:var(--text-secondary);margin:0 0 16px">We'll audit your current internship program and design the scaffolding your interns actually need.</p>
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="primary" size="lg" full-width="{{ true }}" hint-size="100%,52px">Reach out to get your program audited →</x-import>
+              <div style="display:flex;gap:10px;margin-top:12px">
+                <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="outline" onClick="{{ vC.onPrint }}" hint-size="50%,44px">Print / save summary</x-import>
+                <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="ghost" onClick="{{ vC.onReset }}" hint-size="50%,44px">Start over</x-import>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ vC.editing }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:28px">
+            <p class="kw-eyebrow" style="color:var(--orange-700)">8-question diagnostic for employers</p>
+            <h1 class="kw-h1">Place your team on the spectrum.</h1>
+            <p class="kw-intro">Few environments are purely kind or purely wicked. For each dimension, mark where your team really sits between the two poles.</p>
+
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-sm);padding:20px;margin-bottom:22px;display:flex;flex-direction:column;gap:16px">
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.TextField" label="Your name" id="c-name" placeholder="Jane Smith" value="{{ vC.name }}" onChange="{{ vC.onName }}" hint-size="100%,70px"></x-import>
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.TextField" label="Company" id="c-co" placeholder="Acme Inc." value="{{ vC.company }}" onChange="{{ vC.onCompany }}" hint-size="100%,70px"></x-import>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <sc-for list="{{ vC.questions }}" as="q" hint-placeholder-count="3">
+                <div class="kw-qcard">
+                  <div class="kw-qhead">
+                    <span class="kw-qnum">{{ q.n }}</span>
+                    <p class="kw-qprompt">{{ q.prompt }}</p>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;gap:12px;margin-bottom:12px">
+                    <p style="flex:1;font-size:12.5px;line-height:1.45;color:var(--text-secondary);margin:0"><span style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--blue-800);display:block;margin-bottom:3px">KIND</span>{{ q.kind }}</p>
+                    <p style="flex:1;text-align:right;font-size:12.5px;line-height:1.45;color:var(--text-secondary);margin:0"><span style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--burnt);display:block;margin-bottom:3px">WICKED</span>{{ q.wicked }}</p>
+                  </div>
+                  <div style="position:relative;height:26px;display:flex;align-items:center">
+                    <div style="position:absolute;left:9px;right:9px;height:3px;background:var(--slate);border-radius:2px"></div>
+                    <div style="position:relative;display:flex;justify-content:space-between;width:100%">
+                      <sc-for list="{{ q.scale }}" as="pt" hint-placeholder-count="5">
+                        <button type="button" onClick="{{ pt.onSelect }}" style="{{ pt.style }}"></button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="margin-top:22px">
+              <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="primary" size="lg" full-width="{{ true }}" disabled="{{ vC.cannotSubmit }}" onClick="{{ vC.onSubmit }}" hint-size="100%,54px">{{ vC.submitLabel }}</x-import>
+              <p class="kw-hint">Takes about 90 seconds · Instant read · No spam</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "merge <a class="dv-oid" href="#1a">1a</a>'s spectrum bar into <a class="dv-oid" href="#1c">1c</a>" · "make <a class="dv-oid" href="#1b">1b</a> one question at a time" · "add a per-dimension breakdown to the results" · "new result directions"</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  QUESTIONS = [
+    { id:'q1', prompt:'How does most of the work get done?',
+      kind:'Work follows a clear, repeatable process — a manual or script gets you to the right answer.',
+      wicked:'Work is open-ended — there is no set playbook, and the path gets figured out as you go.' },
+    { id:'q2', prompt:'What is feedback like on this team?',
+      kind:'Feedback is fast, accurate, and clearly tied to what someone just did (like chess or golf).',
+      wicked:'Feedback is slow, fuzzy, or missing — short-term progress does not always mean real learning.' },
+    { id:'q3', prompt:'How do new problems usually show up?',
+      kind:'Problems look familiar — we recognise them from past experience and reach for a known fix.',
+      wicked:'The best answers come from reframing the problem, often with a fresh outside perspective.' },
+    { id:'q4', prompt:'How well does past experience predict success here?',
+      kind:'Deep specialist experience is a reliable predictor — more of it usually means better results.',
+      wicked:'Experience can backfire — people get locked into familiar tools and over-confident assumptions.' },
+    { id:'q5', prompt:'How stable is the environment you operate in?',
+      kind:'It is stable — the same patterns hold for years, so what worked before keeps working.',
+      wicked:'It shifts fast — what worked last quarter can hit a wall today, forcing constant recalibration.' },
+    { id:'q6', prompt:'What kind of thinking gets rewarded?',
+      kind:'Deep specialisation — going narrow and mastering one area or system.',
+      wicked:'Connecting the dots across areas and repurposing what is already on hand.' },
+    { id:'q7', prompt:'Where do your best solutions come from?',
+      kind:'Reusing proven methods — if a fix worked once, we apply the same one again.',
+      wicked:'Borrowing ideas from unrelated fields to crack problems that look nothing alike.' },
+    { id:'q8', prompt:'How are decisions typically made?',
+      kind:'By clear rules, where everyone knows what winning looks like.',
+      wicked:'Under real uncertainty — we work from best guesses and keep experimenting.' },
+  ];
+
+  state = {
+    A: { name:'', company:'', answers:{}, submitted:false },
+    B: { name:'', company:'', answers:{}, submitted:false },
+    C: { name:'', company:'', answers:{}, submitted:false },
+  };
+
+  setField(v, field, value) {
+    this.setState(s => ({ [v]: { ...s[v], [field]: value } }));
+  }
+  setAnswer(v, qid, value) {
+    this.setState(s => ({ [v]: { ...s[v], answers: { ...s[v].answers, [qid]: value } } }));
+  }
+  submit(v) { this.setState(s => ({ [v]: { ...s[v], submitted:true } })); }
+  reset(v) { this.setState(s => ({ [v]: { name:'', company:'', answers:{}, submitted:false } })); }
+
+  toW(v, x) {
+    if (v === 'C') return Number(x);
+    return x === 'kind' ? 0 : x === 'wicked' ? 100 : 50;
+  }
+
+  buildView(v) {
+    const st = this.state[v];
+    const ans = st.answers;
+    const answeredIds = this.QUESTIONS.filter(q => ans[q.id] != null);
+    const answered = answeredIds.length;
+    const all = answered === this.QUESTIONS.length;
+    const wvals = answeredIds.map(q => this.toW(v, ans[q.id]));
+    const pct = wvals.length ? Math.round(wvals.reduce((a,b)=>a+b,0) / wvals.length) : 50;
+
+    let kindC=0, bothC=0, wickedC=0;
+    this.QUESTIONS.forEach(q => {
+      if (ans[q.id] == null) return;
+      const w = this.toW(v, ans[q.id]);
+      if (w < 40) kindC++; else if (w > 60) wickedC++; else bothC++;
+    });
+
+    let verdict, accent, tintBg, tagline, implication;
+    if (pct < 40) {
+      verdict = 'Kind environment'; accent = 'var(--blue)'; tintBg = 'var(--blue-50)';
+      tagline = 'Clear rules and quick feedback — skills compound fast here.';
+      implication = 'Because the work is predictable and feedback is fast, interns learn quickly through structured, repeatable practice. Lean into a strong onboarding script, well-scoped tasks, and focused skill-building — the environment does a lot of the teaching for you.';
+    } else if (pct > 60) {
+      verdict = 'Wicked environment'; accent = 'var(--burnt)'; tintBg = 'var(--burnt-100)';
+      tagline = 'Ambiguity and delayed feedback are the norm — range matters more than repetition.';
+      implication = 'Because the work is ambiguous and feedback is slow, interns need broad range and comfort with uncertainty. Build in cognitive scaffolding — micro-milestones, a daily check-in, and protected time to explore — so they can navigate the complexity while their skills are still wiring up.';
+    } else {
+      verdict = 'Mixed environment'; accent = 'var(--orange)'; tintBg = 'var(--orange-50)';
+      tagline = 'Part predictable, part genuinely ambiguous — the mix is the challenge.';
+      implication = 'Some of the work is predictable and some is genuinely ambiguous. Match interns to the task: use structured practice for the clear-cut parts, and add milestones and regular check-ins to guide them through the messy ones.';
+    }
+
+    const segTones = {
+      kind:   { bc:'var(--blue)',  bg:'var(--blue-50)',  tc:'var(--blue-800)' },
+      both:   { bc:'var(--ink)',   bg:'var(--slate-50)', tc:'var(--ink)' },
+      wicked: { bc:'var(--burnt)', bg:'var(--burnt-100)',tc:'var(--burnt-900)' },
+    };
+
+    const questions = this.QUESTIONS.map((q, i) => {
+      const cur = ans[q.id];
+      const mkOpt = (key, label, short) => {
+        const sel = cur === key;
+        const t = segTones[key];
+        return {
+          key, label, short, selected: sel,
+          onSelect: () => this.setAnswer(v, q.id, key),
+          segStyle: {
+            flex:1, cursor:'pointer', padding:'11px 6px', borderRadius:9,
+            fontFamily:'var(--font-display)', fontWeight:700, fontSize:14, textAlign:'center',
+            transition:'all .15s cubic-bezier(.4,0,.2,1)',
+            border: sel ? '2px solid ' + t.bc : '2px solid var(--border)',
+            background: sel ? t.bg : 'var(--white)',
+            color: sel ? t.tc : 'var(--text-muted)',
+          },
+        };
+      };
+      // 5-point spectrum for variation C
+      const scale = [0,25,50,75,100].map(val => {
+        const sel = Number(cur) === val && cur != null;
+        const col = val < 40 ? 'var(--blue)' : val > 60 ? 'var(--burnt)' : 'var(--ink)';
+        const sz = sel ? 24 : 16;
+        return {
+          val, selected: sel,
+          onSelect: () => this.setAnswer(v, q.id, val),
+          style: {
+            width:sz, height:sz, borderRadius:'50%', cursor:'pointer', padding:0,
+            border:'2px solid ' + (sel ? col : '#c4ccd2'),
+            background: sel ? col : 'var(--white)',
+            boxShadow: sel ? 'inset 0 0 0 3px #fff' : 'none',
+            transition:'all .15s cubic-bezier(.4,0,.2,1)', zIndex:2,
+          },
+        };
+      });
+      return {
+        n: i+1, prompt: q.prompt, kind: q.kind, wicked: q.wicked,
+        opts: [
+          mkOpt('kind',   q.kind,   'Kind'),
+          mkOpt('both',   'A mix of both — it depends on the project.', 'Both'),
+          mkOpt('wicked', q.wicked, 'Wicked'),
+        ],
+        scale,
+      };
+    });
+
+    const canSubmit = all && st.name.trim().length > 0;
+
+    return {
+      name: st.name, company: st.company,
+      submitted: st.submitted, editing: !st.submitted,
+      firstName: st.name.trim().split(' ')[0] || 'there',
+      onName: (e) => this.setField(v, 'name', e.target.value),
+      onCompany: (e) => this.setField(v, 'company', e.target.value),
+      onSubmit: () => this.submit(v),
+      onReset: () => this.reset(v),
+      onPrint: () => window.print(),
+      questions, answered, all, canSubmit, cannotSubmit: !canSubmit,
+      submitLabel: canSubmit ? 'See my Kind-or-Wicked read →' : (st.name.trim() ? ('Answer all 8 to continue (' + answered + ' / 8)') : 'Add your name to continue'),
+      pct, pctLabel: pct, verdict, verdictLower: verdict.toLowerCase(),
+      tagline, implication,
+      kindC, bothC, wickedC,
+      heroStyle: { background: tintBg, border: '1px solid ' + accent, borderLeft: '4px solid ' + accent, borderRadius:16, padding:24 },
+      verdictStyle: { color: accent },
+      markerStyle: {
+        position:'absolute', top:'50%', left: pct + '%', transform:'translate(-50%,-50%)',
+        width:20, height:20, borderRadius:'50%', background:'var(--white)',
+        border:'3px solid ' + accent, boxShadow:'0 1px 5px rgba(14,26,35,.35)', zIndex:2,
+      },
+      kindBarStyle:   { width: Math.round(kindC/8*100) + '%',   height:'100%', background:'var(--blue)',  borderRadius:'999px', transition:'width var(--dur-slow) var(--ease-standard)' },
+      wickedBarStyle: { width: Math.round(wickedC/8*100) + '%', height:'100%', background:'var(--burnt)', borderRadius:'999px', transition:'width var(--dur-slow) var(--ease-standard)' },
+      dialStyle: {
+        position:'relative', flexShrink:0, width:120, height:120, borderRadius:'50%',
+        background: 'conic-gradient(' + accent + ' ' + pct + '%, var(--slate) ' + pct + '%)',
+      },
+    };
+  }
+
+  renderVals() {
+    return { vA: this.buildView('A'), vB: this.buildView('B'), vC: this.buildView('C') };
+  }
+}
+</script>
+</body>
+</html>
