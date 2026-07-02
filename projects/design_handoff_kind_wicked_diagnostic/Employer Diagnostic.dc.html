@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Kind or Wicked? — Internship Environment Diagnostic</title>
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/styles.css">
+  <script src="_ds/internship-insights-co-design-system-cd6ca834-a6f3-47ab-88a6-95493c176b5f/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0}
+    body{background:var(--paper);font-family:var(--font-body),system-ui,sans-serif;color:var(--ink)}
+    .kw-h1{font-family:var(--font-display);font-size:38px;font-weight:900;letter-spacing:-.02em;line-height:1.06;margin:0 0 12px;color:var(--ink)}
+    .kw-intro{color:var(--text-secondary);margin:0 0 24px;line-height:1.6;font-size:15px}
+    .kw-qcard{background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-sm);padding:22px}
+    .kw-qhead{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+    .kw-qnum{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--orange);color:var(--ink);font-family:var(--font-display);font-weight:800;font-size:14px;display:grid;place-items:center}
+    .kw-qprompt{font-family:var(--font-display);font-weight:700;font-size:16px;line-height:1.3;margin:0;color:var(--ink);padding-top:3px}
+    .kw-eyebrow{font-family:var(--font-display);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;margin:0 0 10px}
+    .kw-reslabel{font-family:var(--font-display);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--text-muted);margin:0 0 6px}
+    .kw-hint{font-size:12px;color:var(--text-muted);text-align:center;margin:10px 0 0}
+    @media print{.kw-noprint{display:none!important}body{background:#fff}}
+  </style>
+</helmet>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" rx="18" fill="#5499BB"></rect>
+    <circle cx="50" cy="44" r="17" fill="none" stroke="#FBA856" stroke-width="5"></circle>
+    <line x1="50" y1="61" x2="50" y2="72" stroke="#FBA856" stroke-width="5" stroke-linecap="round"></line>
+    <line x1="42" y1="76" x2="58" y2="76" stroke="#fff" stroke-width="5" stroke-linecap="round"></line>
+  </svg>
+</template>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; background-color: var(--bg-blue-tint)">
+  <div class="kw-noprint" style="display:flex;align-items:center;gap:12px;padding:16px 24px;border-bottom:1px solid var(--border);background:var(--white)">
+    <img src="assets/logo-mark.png" alt="" style="height:36px;width:36px">
+    <span style="font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--ink)">Internship Insights Co.</span>
+  </div>
+
+  <main style="flex:1;width:100%;max-width:680px;margin:0 auto;box-sizing:border-box;padding:40px 24px 56px">
+
+    <sc-if value="{{ v.submitted }}" hint-placeholder-val="{{ false }}">
+      <p class="kw-eyebrow" style="color:var(--blue-700)">Your environment read</p>
+      <h2 style="font-family:var(--font-display);font-size:28px;font-weight:900;letter-spacing:-.02em;margin:0 0 22px;color:var(--ink)">Here's your read, {{ v.firstName }}.</h2>
+      <div style="{{ v.heroStyle }}">
+        <p class="kw-reslabel">Result</p>
+        <p style="font-family:var(--font-display);font-size:32px;font-weight:900;letter-spacing:-.02em;margin:0 0 6px"><span style="{{ v.verdictStyle }}">{{ v.verdict }}</span></p>
+        <p style="font-size:14px;line-height:1.55;color:var(--text-secondary);margin:0 0 20px">{{ v.tagline }}</p>
+        <div style="position:relative;height:26px;margin-bottom:8px">
+          <div style="position:absolute;top:7px;left:0;right:0;height:12px;border-radius:999px;background:linear-gradient(90deg,var(--blue) 0%,var(--orange) 55%,var(--burnt) 100%)"></div>
+          <div style="{{ v.markerStyle }}"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.14em">
+          <span style="color:var(--blue-800)">KIND</span>
+          <span style="color:var(--burnt)">WICKED</span>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);margin:10px 0 0">{{ v.pctLabel }} / 100 on the wicked scale</p>
+      </div>
+
+      <div style="border:1px solid var(--border);border-radius:16px;background:var(--white);box-shadow:var(--shadow-sm);padding:22px;margin-top:16px">
+        <p class="kw-reslabel">What this means for your interns</p>
+        <p style="font-size:14.5px;line-height:1.6;color:var(--text-secondary);margin:0">{{ v.implication }}</p>
+      </div>
+
+      <div style="border-radius:16px;border:1px solid var(--orange);border-left:4px solid var(--orange);background:var(--orange-50);padding:24px;margin-top:16px">
+        <p class="kw-eyebrow" style="color:var(--orange-700)">Next step</p>
+        <p style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--ink);margin:0 0 8px;line-height:1.25">Let's build an internship program that fits your environment.</p>
+        <p style="font-size:14px;line-height:1.55;color:var(--text-secondary);margin:0 0 18px">We'll audit your current internship program and design the scaffolding your interns actually need.</p>
+        <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="primary" size="lg" full-width="{{ true }}" hint-size="100%,52px">Reach out to get your program audited →</x-import>
+        <div class="kw-noprint" style="display:flex;gap:10px;margin-top:14px">
+          <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="outline" onClick="{{ v.onPrint }}" hint-size="auto,44px">Print / save summary</x-import>
+          <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="ghost" onClick="{{ v.onReset }}" hint-size="auto,44px">Start over</x-import>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ v.editing }}" hint-placeholder-val="{{ true }}">
+      <p class="kw-eyebrow" style="color: var(--border-strong)">8-question diagnostic for employers</p>
+      <h1 class="kw-h1">Is your workplace <span style="color:var(--blue)">Kind</span> or <span style="color: var(--orange-600)">Wicked</span>?</h1>
+      <p class="kw-intro">Skills develop fast in <strong>kind</strong> environments — clear rules, quick feedback, repeating patterns. They stall in <strong>wicked</strong> ones, where rules are incomplete and feedback is delayed. Knowing which you run is the first step to designing a high-impact internship.</p>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-sm);padding:20px;margin-bottom:22px;display:flex;flex-direction:column;gap:16px">
+        <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.TextField" label="Your name" id="e-name" placeholder="Jane Smith" value="{{ v.name }}" onChange="{{ v.onName }}" hint-size="100%,70px"></x-import>
+        <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.TextField" label="Company" id="e-co" placeholder="Acme Inc." value="{{ v.company }}" onChange="{{ v.onCompany }}" hint-size="100%,70px"></x-import>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <sc-for list="{{ v.questions }}" as="q" hint-placeholder-count="4">
+          <div class="kw-qcard">
+            <div class="kw-qhead">
+              <span class="kw-qnum" style="background-color: var(--blue)">{{ q.n }}</span>
+              <p class="kw-qprompt">{{ q.prompt }}</p>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+              <div style="border:1px solid var(--blue-100);background:var(--blue-50);border-radius:10px;padding:11px 13px">
+                <span style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--blue-800)">KIND</span>
+                <p style="font-size:12.5px;line-height:1.45;color:var(--text-secondary);margin:5px 0 0">{{ q.kind }}</p>
+              </div>
+              <div style="border:1px solid var(--burnt-300);background:var(--burnt-100);border-radius:10px;padding:11px 13px">
+                <span style="font-family: var(--font-display); font-size: 10px; font-weight: 700; letter-spacing: .14em; color: var(--action-hover)">WICKED</span>
+                <p style="font-size:12.5px;line-height:1.45;color:var(--text-secondary);margin:5px 0 0">{{ q.wicked }}</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <sc-for list="{{ q.opts }}" as="opt" hint-placeholder-count="3">
+                <button type="button" onClick="{{ opt.onSelect }}" style="{{ opt.segStyle }}">{{ opt.short }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top:22px">
+        <x-import component-from-global-scope="InternshipInsightsCoDesignSystem_cd6ca8.Button" variant="primary" size="lg" full-width="{{ true }}" disabled="{{ v.cannotSubmit }}" onClick="{{ v.onSubmit }}" hint-size="100%,54px">{{ v.submitLabel }}</x-import>
+        <p class="kw-hint">Takes about 90 seconds · Instant read · No spam</p>
+      </div>
+    </sc-if>
+  </main>
+
+  <footer class="kw-noprint" style="border-top:1px solid var(--border);background:var(--white)">
+    <div style="max-width:680px;margin:0 auto;padding:18px 24px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;font-size:12px;color:var(--text-muted)">
+      <span>© 2026 Internship Insights Co. — Unlocking potential through experience.</span>
+      <span>Bermuda's only internship transformation firm.</span>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  QUESTIONS = [
+    { id:'q1', prompt:'How does most of the work get done?',
+      kind:'Work follows a clear, repeatable process — a manual or script gets you to the right answer.',
+      wicked:'Work is open-ended — there is no set playbook, and the path gets figured out as you go.' },
+    { id:'q2', prompt:'What is feedback like on this team?',
+      kind:'Feedback is fast, accurate, and clearly tied to what someone just did (like chess or golf).',
+      wicked:'Feedback is slow, fuzzy, or missing — short-term progress does not always mean real learning.' },
+    { id:'q3', prompt:'How do new problems usually show up?',
+      kind:'Problems look familiar — we recognise them from past experience and reach for a known fix.',
+      wicked:'The best answers come from reframing the problem, often with a fresh outside perspective.' },
+    { id:'q4', prompt:'How well does past experience predict success here?',
+      kind:'Deep specialist experience is a reliable predictor — more of it usually means better results.',
+      wicked:'Experience can backfire — people get locked into familiar tools and over-confident assumptions.' },
+    { id:'q5', prompt:'How stable is the environment you operate in?',
+      kind:'It is stable — the same patterns hold for years, so what worked before keeps working.',
+      wicked:'It shifts fast — what worked last quarter can hit a wall today, forcing constant recalibration.' },
+    { id:'q6', prompt:'What kind of thinking gets rewarded?',
+      kind:'Deep specialisation — going narrow and mastering one area or system.',
+      wicked:'Connecting the dots across areas and repurposing what is already on hand.' },
+    { id:'q7', prompt:'Where do your best solutions come from?',
+      kind:'Reusing proven methods — if a fix worked once, we apply the same one again.',
+      wicked:'Borrowing ideas from unrelated fields to crack problems that look nothing alike.' },
+    { id:'q8', prompt:'How are decisions typically made?',
+      kind:'By clear rules, where everyone knows what winning looks like.',
+      wicked:'Under real uncertainty — we work from best guesses and keep experimenting.' },
+  ];
+
+  state = { name:'', company:'', answers:{}, submitted:false };
+
+  setField(field, value) { this.setState({ [field]: value }); }
+  setAnswer(qid, value) { this.setState(s => ({ answers: { ...s.answers, [qid]: value } })); }
+  submit() { this.setState({ submitted:true }); }
+  reset() { this.setState({ name:'', company:'', answers:{}, submitted:false }); }
+
+  toW(x) { return x === 'kind' ? 0 : x === 'wicked' ? 100 : 50; }
+
+  buildView() {
+    const st = this.state;
+    const ans = st.answers;
+    const answeredIds = this.QUESTIONS.filter(q => ans[q.id] != null);
+    const answered = answeredIds.length;
+    const all = answered === this.QUESTIONS.length;
+    const wvals = answeredIds.map(q => this.toW(ans[q.id]));
+    const pct = wvals.length ? Math.round(wvals.reduce((a,b)=>a+b,0) / wvals.length) : 50;
+
+    let verdict, accent, tintBg, tagline, implication;
+    if (pct < 40) {
+      verdict = 'Kind environment'; accent = 'var(--blue)'; tintBg = 'var(--blue-50)';
+      tagline = 'Clear rules and quick feedback — skills compound fast here.';
+      implication = 'Because the work is predictable and feedback is fast, interns learn quickly through structured, repeatable practice. Lean into a strong onboarding script, well-scoped tasks, and focused skill-building — the environment does a lot of the teaching for you.';
+    } else if (pct > 60) {
+      verdict = 'Wicked environment'; accent = 'var(--burnt)'; tintBg = 'var(--burnt-100)';
+      tagline = 'Ambiguity and delayed feedback are the norm — range matters more than repetition.';
+      implication = 'Because the work is ambiguous and feedback is slow, interns need broad range and comfort with uncertainty. Build in cognitive scaffolding — micro-milestones, a daily check-in, and protected time to explore — so they can navigate the complexity while their skills are still wiring up.';
+    } else {
+      verdict = 'Mixed environment'; accent = 'var(--orange)'; tintBg = 'var(--orange-50)';
+      tagline = 'Part predictable, part genuinely ambiguous — the mix is the challenge.';
+      implication = 'Some of the work is predictable and some is genuinely ambiguous. Match interns to the task: use structured practice for the clear-cut parts, and add milestones and regular check-ins to guide them through the messy ones.';
+    }
+
+    const segTones = {
+      kind:   { bc:'var(--blue)',  bg:'var(--blue-50)',  tc:'var(--blue-800)' },
+      both:   { bc:'var(--ink)',   bg:'var(--slate-50)', tc:'var(--ink)' },
+      wicked: { bc:'var(--burnt)', bg:'var(--burnt-100)',tc:'var(--burnt-900)' },
+    };
+
+    const questions = this.QUESTIONS.map((q, i) => {
+      const cur = ans[q.id];
+      const mkOpt = (key, short) => {
+        const sel = cur === key;
+        const t = segTones[key];
+        return {
+          key, short, selected: sel,
+          onSelect: () => this.setAnswer(q.id, key),
+          segStyle: {
+            flex:1, cursor:'pointer', padding:'11px 6px', borderRadius:9,
+            fontFamily:'var(--font-display)', fontWeight:700, fontSize:14, textAlign:'center',
+            transition:'all .15s cubic-bezier(.4,0,.2,1)',
+            border: sel ? '2px solid ' + t.bc : '2px solid var(--border)',
+            background: sel ? t.bg : 'var(--white)',
+            color: sel ? t.tc : 'var(--text-muted)',
+          },
+        };
+      };
+      return {
+        n: i+1, prompt: q.prompt, kind: q.kind, wicked: q.wicked,
+        opts: [ mkOpt('kind','Kind'), mkOpt('both','Both'), mkOpt('wicked','Wicked') ],
+      };
+    });
+
+    const canSubmit = all && st.name.trim().length > 0;
+
+    return {
+      name: st.name, company: st.company,
+      submitted: st.submitted, editing: !st.submitted,
+      firstName: st.name.trim().split(' ')[0] || 'there',
+      onName: (e) => this.setField('name', e.target.value),
+      onCompany: (e) => this.setField('company', e.target.value),
+      onSubmit: () => this.submit(),
+      onReset: () => this.reset(),
+      onPrint: () => window.print(),
+      questions, answered, all, cannotSubmit: !canSubmit,
+      submitLabel: canSubmit ? 'See my Kind-or-Wicked read →' : (st.name.trim() ? ('Answer all 8 to continue (' + answered + ' / 8)') : 'Add your name to continue'),
+      pct, pctLabel: pct, verdict, tagline, implication,
+      heroStyle: { background: tintBg, border: '1px solid ' + accent, borderLeft: '4px solid ' + accent, borderRadius:16, padding:24 },
+      verdictStyle: { color: accent },
+      markerStyle: {
+        position:'absolute', top:'50%', left: pct + '%', transform:'translate(-50%,-50%)',
+        width:20, height:20, borderRadius:'50%', background:'var(--white)',
+        border:'3px solid ' + accent, boxShadow:'0 1px 5px rgba(14,26,35,.35)', zIndex:2,
+      },
+    };
+  }
+
+  renderVals() { return { v: this.buildView() }; }
+}
+</script>
+</body>
+</html>
